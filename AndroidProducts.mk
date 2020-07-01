@@ -22,9 +22,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_platina.mk
+    $(LOCAL_DIR)/cherish_platina.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_platina-eng \
-    aosp_platina-userdebug \
-    aosp_platina-user
+    cherish_platina-eng \
+    cherish_platina-userdebug \
+    cherish_platina-user
