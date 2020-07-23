@@ -30,12 +30,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 $(call inherit-product, device/xiaomi/platina/device.mk)
 
 # Inherit AOSP product configuration
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_GAPPS_ARCH := arm64
+TARGET_BOOT_ANIMATION_RES := 1080x2280
 TARGET_INCLUDE_WIFI_EXT := true
 
-# Inherit some common Cherish OS stuff.
-$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
+# Inherit some common Colt stuff.
+$(call inherit-product, vendor/colt/config/common_full_phone.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="platina" \
@@ -47,13 +46,13 @@ BUILD_FINGERPRINT := "google/coral/coral:10/QQ3A.200705.002/6506677:user/release
 TARGET_VENDOR_PRODUCT_NAME := platina
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-# Maintainer
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.cherish.maintainer=1cecreamm
-
 # Device identifier
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_NAME := cherish_platina
+PRODUCT_NAME := colt_platina
 PRODUCT_DEVICE := platina
 PRODUCT_MODEL := MI 8 Lite
+
+# ColtOS stuffs
+COLT_BUILD_TYPE := Official
+COLT_DEVICE_MAINTAINER := Curse
