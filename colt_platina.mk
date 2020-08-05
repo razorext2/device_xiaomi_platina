@@ -36,6 +36,9 @@ TARGET_INCLUDE_WIFI_EXT := true
 # Inherit some common Colt stuff.
 $(call inherit-product, vendor/colt/config/common_full_phone.mk)
 
+# Inherit MIUI Camera
+$(call inherit-product, vendor/xiaomi/MiuiCamera/config.mk)
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="platina" \
     TARGET_DEVICE="platina" \
