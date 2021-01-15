@@ -26,33 +26,25 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
-# Inherit device configuration
-$(call inherit-product, device/xiaomi/platina/device.mk)
+# Inherit some common Lineage stuff
+$(call inherit-product, vendor/aosip/config/common_full_phone.mk)
 
-# Inherit AOSP product configuration
-TARGET_BOOT_ANIMATION_RES := 1080x2280
-TARGET_INCLUDE_WIFI_EXT := true
+# Inherit from platina device
+$(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-# Inherit some common Colt stuff.
-$(call inherit-product, vendor/colt/config/common_full_phone.mk)
+PRODUCT_BRAND := Xiaomi
+PRODUCT_DEVICE := platina
+PRODUCT_MANUFACTURER := Xiaomi
+PRODUCT_NAME := derp_platina
+PRODUCT_MODEL := Mi 8 Lite
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME="platina" \
-    TARGET_DEVICE="platina" \
-    PRIVATE_BUILD_DESC="platina-user 10 QKQ1.190910.002 V11.0.1.0.QDTCNXM release-keys"
-
-BUILD_FINGERPRINT := google/coral/coral:11/RP1A.201105.002/6869500:user/release-keys
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+TARGET_GAPPS_ARCH := arm64
+TARGET_BOOT_ANIMATION_RES := 1080
+IS_PHONE := true
 
 TARGET_VENDOR_PRODUCT_NAME := platina
-PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRIVATE_BUILD_DESC="platina-user 9 PKQ1.180904.001 V10.3.2.0.PEKMIXM release-keys"
 
-# Device identifier
-PRODUCT_BRAND := Xiaomi
-PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_NAME := colt_platina
-PRODUCT_DEVICE := platina
-PRODUCT_MODEL := MI 8 Lite
-
-# ColtOS stuffs
-COLT_BUILD_TYPE := Official
-COLT_DEVICE_MAINTAINER := Curse
+BUILD_FINGERPRINT := google/flame/flame:11/RQ1A.210105.003/7005429:user/release-keys

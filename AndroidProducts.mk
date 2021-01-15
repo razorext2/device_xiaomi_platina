@@ -22,9 +22,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/colt_platina.mk
+    $(LOCAL_DIR)/derp_platina.mk
 
 COMMON_LUNCH_CHOICES := \
-    colt_platina-eng \
-    colt_platina-userdebug \
-    colt_platina-user
+    derp_platina-eng \
+    derp_platina-userdebug \
+    derp_platina-user
